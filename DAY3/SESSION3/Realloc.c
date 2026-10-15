@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *arr=malloc(3*sizeof(int));
+    arr[0]=10;
+    arr[1]=20;
+    arr[2]=30;
+    //*arr=realloc(arr,5*sizeof(int));
+    int *temp=realloc(arr,5*sizeof(int));
+    arr=temp;
+    arr[3]=100;
+    arr[4]=200;
+    printf("Elements:\n");
+    for(int i=0;i<5;i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+    free(arr);
+}
